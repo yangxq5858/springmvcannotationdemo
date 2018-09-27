@@ -1,11 +1,11 @@
 package com.hx.config;
 
-        import org.springframework.context.annotation.ComponentScan;
-        import org.springframework.context.annotation.FilterType;
-        import org.springframework.core.type.filter.TypeFilter;
-        import org.springframework.stereotype.Controller;
 
-        import java.lang.reflect.Type;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.stereotype.Controller;
+
 
 /**
  * @author yangxinqiang
@@ -16,7 +16,7 @@ package com.hx.config;
 //SpringMVC 只扫描Controller，子容器
 //useDefaultFilters = false；includeFilters 这种过滤器，必须让禁用默认的过滤器，才生效
 @ComponentScan(value = "com.hx",includeFilters = {
-        @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = {Controller.class})
+        @Filter(type = FilterType.ANNOTATION,classes = {Controller.class})
 
 },useDefaultFilters = false)
 public class AppConfig {

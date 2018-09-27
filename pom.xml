@@ -7,7 +7,7 @@
     <groupId>com.hx</groupId>
     <artifactId>springmvc-annotation-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
 
     <dependencies>
         <!--导入Springmvc-->
@@ -26,4 +26,16 @@
         </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
