@@ -18,10 +18,14 @@ public class HelloController {
     private HelloService helloService;
 
     @ResponseBody
-    @RequestMapping(value="/hello",method = RequestMethod.GET)
+    @RequestMapping("/hello")
     public String hello(){
         String hello = helloService.sayHello("tomcat");
         return hello;
-//        return "hello world";
+    }
+
+    @RequestMapping("/suc")
+    public String success(){
+        return "success";
     }
 }

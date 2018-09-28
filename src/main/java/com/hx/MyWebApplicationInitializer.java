@@ -4,6 +4,8 @@ import com.hx.config.AppConfig;
 import com.hx.config.RootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.Filter;
+
 /**
  * @author yangxinqiang
  * @create 2018-09-27 17:01
@@ -31,5 +33,11 @@ public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatc
     protected String[] getServletMappings() {
         //拦截除了jsp页面外的所有请求
         return new String[]{"/"};
+    }
+
+    //自定义Filter
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[]{new MyFilter()};
     }
 }
