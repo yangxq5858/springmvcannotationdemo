@@ -15,6 +15,6 @@ import org.springframework.stereotype.Controller;
 //排除controller
 @ComponentScan(value = "com.hx",excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = {Controller.class})
-},useDefaultFilters = false)
+})
 public class RootConfig {
 }
